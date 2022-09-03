@@ -79,13 +79,21 @@ const displayNewsDetails = ids => {
                 
                 <div class="d-lg-flex justify-content-between d-sm-grid mt-5 pt-5 pe-5">
                  <div class="d-flex gap-2">
-                     <img class="rounded-circle" src="${id.author.img}" alt="" width="30" height="30">
+                     <img class="rounded-circle" src="${id.author.img}" alt="" width="50" height="50">
                      <p id="journalist">${id.author.name ? id.author.name : 'No author name found'}</p>
                  </div>
 
              <div class="d-flex gap-1">
                  <i class="fa-solid fa-eye mt-1"></i>
                  <p id="views" class="fw-bold">${id.total_view ? id.total_view : 'no view'}</p>
+             </div>
+
+             <div class="text-warning">
+             <i class="fas fa-star"></i>
+             <i class="fas fa-star"></i>
+             <i class="fas fa-star"></i>
+             <i class="fas fa-star"></i>
+             <i class="fas fa-star-half-alt"></i>
              </div>
 
              <div>
@@ -118,7 +126,9 @@ const detailsModal = async (newsId) => {
     try {
         const response = await fetch(url);
         const data = await response.json();
+        console.log(data);
         displayDetailsModal(data.data)
+        
     }
     catch (error) {
         console.log('Error Occured');
@@ -132,8 +142,10 @@ const displayDetailsModal = id => {
         modalTitle.innerText = modalId.title;
         const modalBody = document.getElementById('news-details-modal-body');
         modalBody.innerHTML = `
-        <img class="img-fluid" src="${modalId.author.img}" alt="">
-        <p><span class="fw-bold">Author Name: </span> ${modalId.author.name ? modalId.author.name : "No Name"}</p>
+        <img class="img-fluid" src="${modalId.author.img}" alt=""> 
+        <p><span class="fw-bold"> <br> Author Name: </span> ${modalId.author.name ? modalId.author.name : "No Name"}</p>
+
+        <p><span class="fw-bold">Details:</span> ${modalId.details} </p>
 
        <div class="d-flex gap-1">
           <i class="fa-solid fa-eye mt-1"></i>       
@@ -142,7 +154,6 @@ const displayDetailsModal = id => {
         <p><span class="fw-bold">Rating: </span>${modalId.rating.number ? modalId.rating.number : "No review"} <i class="fa-solid fa-star"></i></p>
         <p><span class="fw-bold">Published Date: </span> ${modalId.author.published_date ? modalId.author.published_date : "Published Date Not Found"}</p>
         <h5><span class="fw-bold">Review: </span>${modalId.rating.badge ? modalId.rating.badge : "No Review Given"}</h5>
-        
         `
     })
 };
