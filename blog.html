@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/Untitled-1.png" type="image/x-icon">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- font Awesome kit -->
+    <script src="https://kit.fontawesome.com/0b686581ac.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <!-- nav section start here -->
+    <nav class="navbar navbar-expand-lg bg-dark p-2 p-md-4">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><img src="images/wmlogo_vector_blue.png"style="width:150px"; alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto gap-lg-4">
+              <a class="nav-link text-light fs-4" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link text-light fs-4" href="#about">About</a>
+              <a class="nav-link text-light fs-4" href="#feedback">Feedback</a>
+              <a class="nav-link text-light fs-4 disabled" href="blog.html">Blog</a>
+            </div>
+            <button class="btn btn-outline-primary ms-auto px-5 py-3" type="submit"><i class="far fa-user-circle fs-2"></i></button>
+          </div>
+        </div>
+      </nav>
+        <!-- nav section end here -->
+    </header>
+
+    <main>
+        <!-- var,let,const -->
+        <section class="m-1 m-md-4">
+            <div class="shadow-lg p-0 pt-3 pb-3 p-md-5">
+                <h1 class="text-center mb-3 mb-md-5">
+                    Difference Between var, let and const
+                </h1>
+                <div class="d-block d-md-flex justify-content-center row container-fluid mx-auto">
+                    <div class="col-12 col-md-4">
+                        <ul class="list-group">
+                            <li class="list-group-item bg-success text-white text-center fs-1">var</li>
+                            <li class="list-group-item">The scope of a var variable is functional scope.</li>
+                            <li class="list-group-item">It can be updated and re-declared into the scope.</li>
+                            <li class="list-group-item">hoisting done , with initializing as ‘default’ value</li>
+                            <li class="list-group-item">It can be accessed without initialization as its default value is “undefined”.</li>
+                            <li class="list-group-item">hoisting done , with initializing as ‘default’ value</li>
+                          </ul>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <ul class="list-group">
+                            <li class="list-group-item bg-success text-white text-center fs-1">let</li>
+                            <li class="list-group-item">The scope of a let variable is block scope.</li>
+                            <li class="list-group-item">It can be updated but cannot be re-declared into the scope.</li>
+                            <li class="list-group-item">It can be declared without initialization.</li>
+                            <li class="list-group-item">It cannot be accessed without initialization otherwise it will give ‘referenceError’.</li>
+                            <li class="list-group-item">Hoisting is done , but not initialized (this is the reason for error when we access the let variable before declaration/initialization</li>
+                          </ul>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <ul class="list-group">
+                            <li class="list-group-item bg-success text-white text-center fs-1">const</li>
+                            <li class="list-group-item">The scope of a const variable is block scope.
+                            </li>
+                            <li class="list-group-item">It cannot be updated or re-declared into the scope.</li>
+                            <li class="list-group-item">It cannot be declared without initialization.</li>
+                            <li class="list-group-item">It cannot be accessed without initialization, as it cannot be declared without initialization.</li>
+                            <li class="list-group-item">Hoisting is done, but not initialized (this is the reason for error when we access the const variable before declaration/initialization</li>
+                          </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Arrow and regular function -->
+        <section class="m-1 m-md-4">
+            <div class="shadow-lg p-0 pt-3 pb-3 p-md-5">
+                <h1 class="text-center mb-3 mb-md-5">
+                    Difference Between Arrow and Regular function
+                </h1>
+                <div class="d-block d-md-flex justify-content-center row  mx-auto">
+                    <div>
+                        <ul class="list-group">
+                            <li class="list-group-item bg-success text-white text-center fs-5">An arrow function is also known as the fat arrow function. It is a new feature introduced in ES6 that is a more concise syntax for writing function expressions. Both regular JavaScript functions and arrow functions work in a similar manner but there are some differences between them. Let's see the differences below:</li>
+
+                            <li class="list-group-item"><span class="fw-bold fs-4">Syntax:<br></span> A programmer can get the same result as regular functions by writing a few lines of code using arrow functions.
+                                <br>
+                            Curly brackets are not required if only one expression is present.
+
+                            <div class="d-block d-flex justify-content-center row">
+                                <div class="col-12 col-md-6 text-center">
+                                    <p>
+                                        <span class="fw-semibold">
+                                            <br>// Regular function ES5
+                                        </span> <br>
+                                        var add = function(a, b){ <br>
+                                            return a + b;};
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-6 text-center">
+                                    <span class="fw-semibold">
+                                        // Arrow function ES6
+                                    </span> <br>
+                                    let add = (a, b) => { return a + b}; <br>
+                                    or <br>
+                                    let add = (a, b) => a + b;
+                                </div>
+                            </div>
+                        </li>
+
+
+
+                            <li class="list-group-item"><span class="fw-bold fs-4">Arguments binding:<br></span>
+                                <p>
+                                   <small>arguments</small> object inside the regular functions contains the list of arguments.
+                                    <div class="row row d-block d-md-flex justify-content-center mx-auto container-fluid">
+                                        <div class="col-12 col-md-6 border rounded text-center bg-dark text-light row ">
+                                            <p>
+                                                <span class="fw-semibold">
+                                                    // Object with Regular function
+                                                </span> <br>
+                                                let showData = { <br>
+                                                    showArg: function(){ <br>
+                                                    console.log(arguments); <br>
+                                                    } <br>
+                                                } <br>
+                                                showData.showArg(1,2,3); <br>
+                                                // output {0:1,1:2,2:3}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </p>
+                                <p>
+                                    The arrow function, on the opposite, doesn't define <small>arguments</small> i.e. they do not have arguments binding.
+                                     <div class="row d-block d-md-flex justify-content-center mx-auto container-fluid">
+                                        <div class="col-12 col-md-6 border rounded text-center bg-dark text-light row ">
+                                            <p>
+                                                <span class="fw-semibold"> <br>
+                                                   // Object with Arrow function
+                                                </span> <br>
+                                                let showData = { <br>
+                                                   showArg: ()=>console.log(arguments); <br>
+                                                    } <br>
+                                               showData.showArg(1,2,3); <br>
+                                               <span>// Uncaught ReferenceError: arguments is not defined</span> <br>
+                                            </p>
+                                        </div>
+                                     </div>
+                                     <p>
+                                        <br> But you can easily access the arrow function arguments using a rest parameter <small>...args.</small>
+                                        <div class="row d-block d-md-flex justify-content-center mx-auto container-fluid">
+                                            <div class="col-12 col-md-6 border rounded text-center bg-dark text-light row">
+                                                <p> <br>
+                                                    <span class="fw-semibold">
+                                                        // using rest parameters
+                                                    </span> <br>
+                                                    let showData = { <br>
+                                                        showArg: (...args)=>console.log(args); <br>
+                                                        } <br>
+                                                        myFunc.showArgs(1, 2, 3, 4); <br>
+                                                   <span>// [1, 2, 3, 4]</span> <br> <br>
+                                                </p>
+                                            </div>
+                                        </div>
+                                     </p>
+                                 </p>
+                            </li>
+
+
+
+                            <li class="list-group-item">
+                                <span class="fw-bold fs-4"> Using a new keyword:<br></span>
+                                <p>
+                                    Regular functions are constructible and callable. They can be called using the new keyword.
+                                     <div class="row d-block d-md-flex justify-content-center mx-auto container-fluid">
+                                        <div class="col-12 col-md-6 border rounded text-center bg-dark text-light row ">
+                                            <p>
+                                                function Car(color) { <br>
+                                                    this.color = color; <br>
+                                                    } <br>
+                                                    const redCar = new Car('red'); <br>
+                                                    redCar instanceof Car; <br>
+                                               <span>// => true</span> <br>
+                                            </p>
+                                        </div>
+                                     </div>
+                                     <p>
+                                        <br> But, the arrow functions are only callable and not constructible, i.e., arrow functions can never be used as constructor functions.
+                                        <div class="row d-block d-md-flex justify-content-center mx-auto container-fluid">
+                                            <div class="col-12 col-md-6 border rounded text-center bg-dark text-light row">
+                                                <p> <br>
+                                                    const Car = (color) => { <br>
+                                                        this.color = color; <br>
+                                                        }; <br>
+                                                        const redCar = new Car('red'); <br>
+                                                   <span>// TypeError: Car is not a constructor</span> <br> <br>
+                                                </p>
+                                            </div>
+                                        </div>
+                                     </p>
+                                 </p>
+                            </li>
+                          </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- difference between map, for each, filter, find -->
+        <section class="m-1 m-md-4">
+            <div class="shadow-lg p-0 pt-3 pb-3 p-md-5">
+                <h1 class="text-center mb-3 mb-md-5">
+                    Difference Between .map() , .forEach() , .filter() , .find()
+                </h1>
+                <div class="d-block d-md-flex justify-content-center row  mx-auto">
+                    <div>
+                        <ul class="list-group">
+                            <li class="list-group-item bg-success text-white text-center fs-5">.forEach(), .map(), .filter, .find() .... What's the difference?</li>
+
+                            <li class="list-group-item">
+                                <p>
+                                    <span class="fw-bold fs-4">.forEach():<br></span>
+                                    <span class="text-danger">.forEach(),</span> is used to execute the same code on every element in an array but does not change the array and it returns undefined.
+                                    <p>
+                                        <span class="fw-bold">Example:</span>
+                                        In the example below we would use .forEach() to iterate over an array of food and log that we would want to eat each of them.
+                                    </p>
+                                     <div class="row d-block d-md-flex justify-content-center mx-auto container-fluid">
+                                        <div class="col-12 col-md-6 border rounded text-center bg-dark text-light row ">
+                                            <p> <br>
+                                                let food = ['mango','rice','pepper','pear']; <br>
+                                                food.forEach(function(foodItem){  <br>
+                                                console.log('I want to eat '+foodItem); <br>
+                                                }); <br>
+                                            </p>
+                                        </div>
+                                     </div>
+                                 </p>
+                                 <p>
+                                    <span class="fw-bold fs-4">.map():<br></span>
+                                    <span class="text-danger">.forEach(),</span> .map() executes the same code on every element in an array and returns a new array with the updated elements.
+                                    <p>
+                                        <span class="fw-bold">Example:</span>
+                                        In the example below we would use .map to iterate over the elements of the cost array and divide each element by 10, then assign our new array containing the new cost to the variable newCost.
+                                    </p>
+                                     <div class="row d-block d-md-flex justify-content-center mx-auto container-fluid">
+                                        <div class="col-12 col-md-6 border rounded text-center bg-dark text-light row ">
+                                            <p> <br>
+                                                let cost = [100,400,300,700]; <br>
+                                                let newCost = cost.map(function(costItem){  <br>
+                                                    return costItem / 10; <br>
+                                                }); <br>
+                                                console.log(newCost) <br>
+                                            </p>
+                                        </div>
+                                     </div>
+                                 </p>
+
+                                 <p>
+                                    <span class="fw-bold fs-4">.filter():<br></span>
+                                    <span class="text-danger">.forEach(),</span> .filter() checks every element in an array to see if it meets a certain criteria and returns a new array with the elements that return truthy for the criteria.
+                                    <p>
+                                        <span class="fw-bold">Example:</span>
+                                        In the example below we would use .filter to return values that are less than 200.
+                                    </p>
+                                     <div class="row d-block d-md-flex justify-content-center mx-auto container-fluid">
+                                        <div class="col-12 col-md-6 border rounded text-center bg-dark text-light row ">
+                                            <p> <br>
+                                                let cost = [100,400,50,40,700]; <br>
+                                                let smallCost = cost.filter(function(costItem){  <br>
+                                                    return costItem < 200 <br>
+                                                }); <br>
+                                                console.log(smallCost); <br>
+                                            </p>
+                                        </div>
+                                     </div>
+                                 </p>
+                                 <p>
+                                    <span class="fw-bold fs-4">.find():<br></span>
+                                    The find() method is used to find all the descendant elements of the selected element.
+                                    The find() method finds the element in the DOM tree by traversing through the root to the leaf. The find() method search through all the child elements only. It does not execute the function for empty elements. It does not change the original array. 
+                            </li>
+
+                          </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- why should use template string -->
+        <section class="m-1 m-md-4">
+            <div class="shadow-lg p-0 pt-3 pb-3 p-md-5">
+                <h1 class="text-center mb-3 mb-md-5">
+                    Why should use Template String ?
+                    <hr class="mx-5">
+                </h1>
+                <p class="border rounded p-5">
+                    Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate variables and expressions into strings without needing to concatenate like in older versions of JavaScript. It allows us to create strings that are complex and contain dynamic elements. Another great thing that comes with template strings are tags. Tags are functions that take a string and the decomposed parts of the string as parameters and are great for converting strings to different entities.
+                    <br>
+                    The syntax for creating template strings is by using backticks to delimit them. <br>
+                    For example, we can write: <br>
+                    `This is a string` <br>
+                    This is a very simple example of a template string. All the content is constant and there are no variables or expressions in it. To add variables and or expressions to a string, we can do the following.
+                </p>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+        <!-- Bootstrap CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
