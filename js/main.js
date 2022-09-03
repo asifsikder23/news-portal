@@ -70,12 +70,12 @@ const displayNewsDetails = ids => {
         <div class="card mb-3">
         <div class="row g-0">
             <div class="col-12 col-md-3">
-            <img src="${id.thumbnail_url}" class="img-fluid rounded-start" alt="...">
+            <img src="${id.thumbnail_url}" class="img-fluid rounded-start w-100" alt="...">
             </div>
             <div class="col-md-9">
             <div class="card-body">
                 <h5 class="news-title">${id.title}</h5>
-                <p class="news-text mb-1">${id.details.slice(0, 200)} ...</p>
+                <p class="news-text mb-1">${id.details.slice(0, 400)} ...</p>
                 
                 <div class="d-lg-flex justify-content-between d-sm-grid mt-5 pt-5 pe-5">
                  <div class="d-flex gap-2">
