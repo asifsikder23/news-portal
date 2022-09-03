@@ -67,15 +67,17 @@ const displayNewsDetails = ids => {
         cardDiv.classList.add('row');
         cardDiv.classList.add('g-0');
         cardDiv.innerHTML = `
-        <div class="col-md-3 px-3 py-3">
+        <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-12 col-md-3">
             <img src="${id.thumbnail_url}" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-9 px-2">
+            </div>
+            <div class="col-md-9">
             <div class="card-body">
                 <h5 class="news-title">${id.title}</h5>
-                <p class="news-text mb-5">${id.details.slice(0, 700)} ...</p>
-
-             <div class="d-lg-flex justify-content-between d-sm-grid mt-5 pt-5 pe-5">
+                <p class="news-text mb-1">${id.details.slice(0, 200)} ...</p>
+                
+                <div class="d-lg-flex justify-content-between d-sm-grid mt-5 pt-5 pe-5">
                  <div class="d-flex gap-2">
                      <img class="rounded-circle" src="${id.author.img}" alt="" width="30" height="30">
                      <p id="journalist">${id.author.name ? id.author.name : 'No author name found'}</p>
@@ -89,10 +91,10 @@ const displayNewsDetails = ids => {
              <div>
                  <button onclick="detailsModal('${id._id}')" data-bs-toggle="modal" data-bs-target="#showNewsDetailsModal" class="border border-none bg-light"><i class="fa-solid fa-arrow-right" id="showDetails"></i></button>
              </div>
-             </div>
+            </div>
             </div>
         </div>
-        <hr>
+        </div>
         `;
         cardContainer.appendChild(cardDiv);
         toggleSpinner(false);
@@ -119,7 +121,7 @@ const detailsModal = async (newsId) => {
         displayDetailsModal(data.data)
     }
     catch (error) {
-        alert('Error Occured');
+        console.log('Error Occured');
     }
 }
 
@@ -130,8 +132,11 @@ const displayDetailsModal = id => {
         modalTitle.innerText = modalId.title;
         const modalBody = document.getElementById('news-details-modal-body');
         modalBody.innerHTML = `
-        <img class="img" width="50" height="50" src="${modalId.author.img}" alt="">
+        <img class="img-fluid" src="${modalId.author.img}" alt="">
         <p><span class="fw-bold">Author Name: </span> ${modalId.author.name ? modalId.author.name : "No Name"}</p>
+
+        
+
        <div class="d-flex gap-1">
           <i class="fa-solid fa-eye mt-1"></i>       
           <p id="views" class="fw-bold">${modalId.total_view ? modalId.total_view : 'no view'} </p>        
@@ -139,6 +144,7 @@ const displayDetailsModal = id => {
         <p><span class="fw-bold">Rating: </span>${modalId.rating.number ? modalId.rating.number : "No review"} <i class="fa-solid fa-star"></i></p>
         <p><span class="fw-bold">Published Date: </span> ${modalId.author.published_date ? modalId.author.published_date : "Published Date Not Found"}</p>
         <h5><span class="fw-bold">Review: </span>${modalId.rating.badge ? modalId.rating.badge : "No Review Given"}</h5>
+        
         `
     })
 };
