@@ -21,11 +21,6 @@ const displayCategory=(news =>{
         newsContainer.appendChild(newsDiv)
     });
 })
-        // const displayAllNews = () =>{
-        // const showAll = document.getElementById('show-all-news.length')
-        // const showNews = document.getElementById('show-all-news')
-        // for(const show of showAll.length){
         
-        // }
 
 loadCategory();
